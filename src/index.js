@@ -44,7 +44,7 @@ class MyComponent extends React.Component {
 
   render() {
     return (
-      (<SwipeableViews enableMouseEvents animateHeight={this.state.animate} onClick={this.changeState}>
+      (<SwipeableViews enableMouseEvents animateHeight={this.state.animate} onMouseOver={this.changeState}>
         <About style={Object.assign({}, styles.slide, styles.slide1)} style={sectionStyle}/>
         <Artist style={Object.assign({}, styles.slide, styles.slide2)} style={sectionStyle}/>
         <Developer style={Object.assign({}, styles.slide, styles.slide3)} style={sectionStyle}/>
