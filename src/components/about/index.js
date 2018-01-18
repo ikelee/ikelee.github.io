@@ -9,21 +9,19 @@ import Insta from '../../logos/insta.svg'
 import Linkedin from '../../logos/linkedin.svg'
 import Twitter from '../../logos/twitter.svg'
 
-const Img = styled.img`
-  width: 100%;
-  height: 100%;
-  filter: grayscale(1);
-  max-width: 100vw;
-  max-height: inherit; 
-`
-
 const Title = styled.div`
   font-family: 'GraphikWeb',-apple-system,BlinkMacSystemFont,sans-serif;
   font-size: 120px;
   color: #fff;
-  position: absolute;
   text-align: center;
   vertical-align: middle;
+`
+
+const TitleDescription = styled.div`
+  font-family: 'GraphikWeb',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
 `
 
 const Heading = styled.div`
@@ -51,7 +49,20 @@ const Paragraph = styled.div`
 `
 
 const FlexBox = styled.div`
+  background-image: url(${About});
   display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 100vh;
+  height: -webkit-fill-available;
+  background-repeat:no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-position: center;
+`
+
+const ContentBox = styled.div`
+  display: block;
   align-items: center;
   justify-content: center;
   max-height: 100vh;
@@ -93,8 +104,10 @@ const paragraphContent = "Welcome, my name is Ike, and I am a Korean-Canadian de
 export default () => (
   <div>
     <FlexBox>
-      <Img src={About}/>
-      <Title>About</Title>
+      <ContentBox>
+        <Title>Ike Lee</Title>
+        <TitleDescription>Developer, Journalist, Musician</TitleDescription>
+      </ContentBox>
     </FlexBox>
     <Heading>
       <Header>Biography</Header>

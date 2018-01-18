@@ -3,13 +3,6 @@ import styled from 'styled-components'
 
 import Developer from '../../images/developer.png'
 
-const Img = styled.img`
-  width: 100%;
-  height: 100%;
-  filter: grayscale(1);
-  max-width: 100vw;
-  max-height: inherit; 
-`
 const Title = styled.div`
   font-family: 'GraphikWeb',-apple-system,BlinkMacSystemFont,sans-serif;
   font-size: 120px;
@@ -17,7 +10,7 @@ const Title = styled.div`
   position: absolute;
   text-align: center;
   vertical-align: middle;
-  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;  
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 `
 
 const FlexBox = styled.div`
@@ -25,11 +18,17 @@ const FlexBox = styled.div`
   align-items: center;
   justify-content: center;
   max-height: 100vh;
+  width: 100%;
+  height: 100%;
+  background-image: url(${Developer});
+  background-repeat:no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-position: center;
 `
 
 export default () => (
   <FlexBox>
-    <Img src={Developer}/>
     <Title>Developer</Title>
   </FlexBox>
 )

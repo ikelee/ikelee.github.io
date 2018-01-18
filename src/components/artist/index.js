@@ -3,13 +3,6 @@ import styled from 'styled-components'
 
 import Artist from '../../images/artist.jpg'
 
-const Img = styled.img`
-  width: 100%;
-  height: 100%;
-  filter: grayscale(1);
-  max-width: 100vw;
-  max-height: inherit; 
-`
 const Title = styled.div`
   font-family: 'GraphikWeb',-apple-system,BlinkMacSystemFont,sans-serif;
   font-size: 120px;
@@ -20,15 +13,20 @@ const Title = styled.div`
 `
 
 const FlexBox = styled.div`
+  background-image: url(${Artist});
   display: flex;
   align-items: center;
   justify-content: center;
   max-height: 100vh;
+  width: 100%;
+  height: 100%;
+  background-repeat:no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-position: center;
 `
-
 export default () => (
   <FlexBox>
-    <Img src={Artist}/>
     <Title>Artist</Title>
   </FlexBox>
 )
