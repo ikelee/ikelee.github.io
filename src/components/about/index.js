@@ -5,9 +5,10 @@ import About from '../../images/about.jpg'
 
 import Facebook from '../../logos/facebook.svg'
 import Github from '../../logos/github.svg'
-import Insta from '../../logos/insta.svg'
+import Insta from '../../logos/instagram.svg'
 import Linkedin from '../../logos/linkedin.svg'
 import Twitter from '../../logos/twitter.svg'
+import Document from '../../logos/document.svg'
 
 const Title = styled.div`
   font-family: 'GraphikWeb',-apple-system,BlinkMacSystemFont,sans-serif;
@@ -130,6 +131,9 @@ export default () => (
         </Logos>
         <Logos> 
           <Logo src={Twitter}/>
+        </Logos>
+        <Logos href="https://github.com/ikelee/Resume/blob/master/IkeLeeW18Resume.pdf"> 
+          <Logo src={Document}/>
         </Logos>
       </LogoBar>
     </Contact>

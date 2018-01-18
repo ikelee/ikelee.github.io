@@ -39,7 +39,6 @@ class MyComponent extends React.Component {
   
   changeState() {
     if( !this.state.clicked ) {
-      console.log("changed")
       this.setState({animate: true, clicked: true})
     }
   }
@@ -48,9 +47,9 @@ class MyComponent extends React.Component {
     return (
       (<SwipeableViews enableMouseEvents animateHeight={this.state.animate} onTouchStart={this.changeState} onMouseOver={this.changeState}>
         <About style={Object.assign({}, styles.slide, styles.slide1)} style={sectionStyle}/>
-        <Artist style={Object.assign({}, styles.slide, styles.slide2)} style={sectionStyle}/>
         <Developer style={Object.assign({}, styles.slide, styles.slide3)} style={sectionStyle}/>
         <Journalism style={Object.assign({}, styles.slide, styles.slide3)} style={sectionStyle}/>
+        <Artist style={Object.assign({}, styles.slide, styles.slide2)} style={sectionStyle}/>
       </SwipeableViews>
       ));
     }
