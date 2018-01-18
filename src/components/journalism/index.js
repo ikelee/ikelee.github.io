@@ -3,13 +3,6 @@ import styled from 'styled-components'
 
 import Journalism from '../../images/journalism.jpg'
 
-const Img = styled.img`
-  width: 100%;
-  height: 100%;
-  filter: grayscale(1);
-  max-width: 100vw;
-  max-height: inherit; 
-`
 const Title = styled.div`
   font-family: 'GraphikWeb',-apple-system,BlinkMacSystemFont,sans-serif;
   font-size: 120px;
@@ -24,10 +17,16 @@ const FlexBox = styled.div`
   align-items: center;
   justify-content: center;
   max-height: 100vh;
+  width: 100%;
+  height: 100%;
+  background-image: url(${Journalism});
+  background-repeat:no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-position: center;
 `
 export default () => (
   <FlexBox>
-    <Img src={Journalism}/>
-    <Title>Journalism</Title>
+    <Title>Journalist</Title>
   </FlexBox>
 )

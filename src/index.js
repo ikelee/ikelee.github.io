@@ -32,19 +32,21 @@ var sectionStyle = {
 class MyComponent extends React.Component {
   constructor(props) {
       super(props);
-      this.state = {animate: false};
+      this.state = {animate: false, clicked: false};
 
       this.changeState = this.changeState.bind(this);
   }
   
   changeState() {
-    console.log(this)
-    this.setState({animate: true})
+    if( !this.state.clicked ) {
+      console.log("changed")
+      this.setState({animate: true, clicked: true})
+    }
   }
 
   render() {
     return (
-      (<SwipeableViews enableMouseEvents animateHeight={this.state.animate} onMouseOver={this.changeState}>
+      (<SwipeableViews enableMouseEvents animateHeight={this.state.animate} onTouchStart={this.changeState} onMouseOver={this.changeState}>
         <About style={Object.assign({}, styles.slide, styles.slide1)} style={sectionStyle}/>
         <Artist style={Object.assign({}, styles.slide, styles.slide2)} style={sectionStyle}/>
         <Developer style={Object.assign({}, styles.slide, styles.slide3)} style={sectionStyle}/>
