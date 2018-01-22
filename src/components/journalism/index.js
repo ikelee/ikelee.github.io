@@ -6,7 +6,7 @@ import Journalism from '../../images/journalism.jpg'
 const Title = styled.div`
   font-family: 'GraphikWeb',-apple-system,BlinkMacSystemFont,sans-serif;
   font-size: 120px;
-  color: #000000;
+  color: #ffffff;
   position: absolute;
   text-align: center;
   vertical-align: middle;
@@ -17,16 +17,26 @@ const FlexBox = styled.div`
   align-items: center;
   justify-content: center;
   max-height: 100vh;
-  width: 100%;
-  height: 100%;
+  height: -webkit-fill-available;
   background-image: url(${Journalism});
   background-repeat:no-repeat;
   background-position: center center;
   background-size: cover;
   background-position: center;
 `
+
+const Heading = styled.div`
+  width: 100%;
+  background: #ffffff;
+  margin: 0;
+  overflow: auto;
+  text-align: -webkit-center;
+`
+
 export default () => (
-  <FlexBox>
-    <Title>Journalist</Title>
-  </FlexBox>
+  <div>
+    <FlexBox>
+      <Title>Journalist</Title>
+    </FlexBox>
+  </div>
 )

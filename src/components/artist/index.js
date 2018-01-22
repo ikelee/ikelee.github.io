@@ -6,7 +6,7 @@ import Artist from '../../images/artist.jpg'
 const Title = styled.div`
   font-family: 'GraphikWeb',-apple-system,BlinkMacSystemFont,sans-serif;
   font-size: 120px;
-  color: #525252;
+  color: #ffffff;
   position: absolute;
   text-align: center;
   vertical-align: middle;

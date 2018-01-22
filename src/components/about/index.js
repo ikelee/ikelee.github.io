@@ -100,7 +100,7 @@ const Footing = styled.div`
   text-align: -webkit-center;
 `
 
-const paragraphContent = "Welcome, my name is Ike, and I am a Korean-Canadian developer and a computer engineering student. I'm also an aspiring musician, journalist and an entrepreneur. \n\nI currently attend University of Waterloo, and have worked at several different companies including Hootsuite in Vancouver. I love imagining, talking about, building and breaking new technologies. I am also fascinated by what big data/deep learning is enabling us to create.\n\nOn my spare time, I love to cook, produce music and be out in nature. Check out my Instagram page for more pictures and updates! \n\nDon’t hesitate to reach out - I love meeting new people, and thanks for visiting"
+const paragraphContent = "Welcome, my name is Ike, and I am a Korean-Canadian developer and a computer engineering student. I'm also an aspiring musician, journalist and an entrepreneur. \n\nI currently attend University of Waterloo, and have worked at several different companies including Hootsuite in Vancouver. I love imagining, talking about, building and breaking new technologies. I am also fascinated by what big data/deep learning is enabling us to create.\n\nOn my spare time, I love to cook, produce music and be out in nature. Check out my Instagram page for more pictures and updates! \n\nDon’t hesitate to reach out - I love meeting new people, and thanks for visiting \n\n (This webpage is still under construction)"
 
 export default () => (
   <div>

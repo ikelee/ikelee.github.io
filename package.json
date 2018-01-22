@@ -6,6 +6,8 @@
     "gh-pages": "^1.1.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-iframe": "^1.1.0",
+    "react-native-page-previewer": "^0.1.7",
     "react-scripts": "1.0.17",
     "react-swipeable-views": "^0.12.12",
     "styled-components": "^2.2.4"

@@ -10,7 +10,6 @@ const Title = styled.div`
   position: absolute;
   text-align: center;
   vertical-align: middle;
-  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 `
 
 const FlexBox = styled.div`
@@ -56,8 +55,8 @@ export default () => (
       <Title>Developer</Title>
     </FlexBox>
     <Heading>
-      <Header>Biography</Header>
-      <Paragraph>Lorem Ipsum</Paragraph>
+      <Header>Projects</Header>
+      <Paragraph>These are some of the projects I have worked on over the last couple years. </Paragraph>
     </Heading>
   </div>
 )
