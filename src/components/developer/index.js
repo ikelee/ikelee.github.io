@@ -4,10 +4,10 @@ import styled from 'styled-components'
 import Developer from '../../images/developer.png'
 
 const Title = styled.div`
-  font-family: 'GraphikWeb',-apple-system,BlinkMacSystemFont,sans-serif;
-  font-size: 120px;
-  color: #ffffff;
-  position: absolute;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  color: #fff;
   text-align: center;
   vertical-align: middle;
 `

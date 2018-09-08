@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 
-import About from '../../images/about.jpg'
+import About from '../../images/portrait.jpg'
 
 import Facebook from '../../logos/facebook.svg'
 import Github from '../../logos/github.svg'
@@ -9,20 +9,31 @@ import Insta from '../../logos/instagram.svg'
 import Linkedin from '../../logos/linkedin.svg'
 import Twitter from '../../logos/twitter.svg'
 import Document from '../../logos/document.svg'
+import Portrait from '../../images/portrait2.jpg'
 
 const Title = styled.div`
-  font-family: 'GraphikWeb',-apple-system,BlinkMacSystemFont,sans-serif;
-  font-size: 120px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 50px;
+  font-weight: 700;
   color: #fff;
   text-align: center;
   vertical-align: middle;
 `
 
 const TitleDescription = styled.div`
-  font-family: 'GraphikWeb',-apple-system,BlinkMacSystemFont,sans-serif;
-  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 26px;
+  font-weight: 300;
   color: #fff;
   text-align: center;
+`
+
+const LineSpacer = styled.div`
+  width: 80px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #fff;
 `
 
 const Heading = styled.div`
@@ -32,21 +43,22 @@ const Heading = styled.div`
   overflow: auto;
   text-align: -webkit-center;
 `
-const Header = styled.div`
-  font-size: 80px;
-  font-weight: 800;
+const Header = styled.h2`
   text-align: center;
   margin-top: 35px;
-  font-family: 'GraphikWeb',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #000;
+  vertical-align: middle;
 `
 
 const Paragraph = styled.div`
-  font-size: 20px;
-  max-width: 80vw;
+  font-size: 15px;
   margin-top: 27px;
-  margin-bottom: 40px; 
-  font-family: 'GraphikWeb',-apple-system,BlinkMacSystemFont,sans-serif;
-  white-space: pre-wrap;
+  margin-bottom: 20px; 
+  font-family: 'Open Sans', sans-serif;
+  line-height: 26px;
 `
 
 const FlexBox = styled.div`
@@ -84,12 +96,16 @@ const LogoBar = styled.div`
   display: inline-block;
 `
 
-const Logos = styled.a`
+const LogoCTA = styled.a`
   margin: 15px;
 `
 
 const Logo = styled.img`
   height: 70px;
+`
+
+const InsertedImage = styled.img`
+  height: 400px;
 `
 
 const Footing = styled.div`
@@ -100,41 +116,54 @@ const Footing = styled.div`
   text-align: -webkit-center;
 `
 
-const paragraphContent = "Welcome, my name is Ike, and I am a Korean-Canadian developer and a computer engineering student. I'm also an aspiring musician, journalist and an entrepreneur. \n\nI currently attend University of Waterloo, and have worked at several different companies including Hootsuite in Vancouver. I love imagining, talking about, building and breaking new technologies. I am also fascinated by what big data/deep learning is enabling us to create.\n\nOn my spare time, I love to cook, produce music and be out in nature. Check out my Instagram page for more pictures and updates! \n\nDon’t hesitate to reach out - I love meeting new people, and thanks for visiting \n\n (This webpage is still under construction)"
+const paragraphContent = "Hi, welcome to my website. I'm Ike, and I am a Korean-Canadian developer and a computer engineering student."
+const paragraphHeader = "I'm also an aspiring musician, journalist and an entrepreneur, and I currently attend University of Waterloo"
+const paragraphItalic = "I have worked at several different companies including Toast, Rave and Hootsuite. "
+const paragraphDetail = "I love imagining, talking about, building and breaking new technologies. I am also fascinated by what big data/deep learning is enabling us to create.\n\nOn my spare time, I love to cook, produce music and be out in nature. Check out my Instagram page for more pictures and updates! \n\nDon’t hesitate to reach out - I love meeting new people, and thanks for visiting \n\n (This webpage is still under construction)"
 
 export default () => (
   <div>
     <FlexBox>
       <ContentBox>
         <Title>Ike Lee</Title>
+        <LineSpacer/>
         <TitleDescription>Developer, Journalist, Musician</TitleDescription>
       </ContentBox>
     </FlexBox>
     <Heading>
       <Header>Biography</Header>
-      <Paragraph>{paragraphContent}</Paragraph>
+      <LineSpacer/>
+      <Paragraph style={{maxWidth: '80vw'}}>{paragraphContent}</Paragraph>
+      <div style={{display: 'inline-flex', maxWidth: '70vw'}}>
+        <InsertedImage style={{marginBottom: '20px'}} src={Portrait}/>
+        <div>
+          <Paragraph style={{marginLeft: '15px', marginTop: '10px', fontWeight: 700, fontSize: '20px'}}>{paragraphHeader}</Paragraph>
+          <Paragraph style={{marginLeft: '15px', marginTop: '5px', fontWeight: 300, fontStyle: 'italic'}}>{paragraphItalic}</Paragraph>
+          <Paragraph style={{marginLeft: '15px', marginTop: '5px'}}>{paragraphDetail}</Paragraph>
+        </div>
+      </div>
     </Heading>
     <Contact>
       <Header>Contact</Header>
       <LogoBar>
-        <Logos href="https://www.facebook.com/ike.lee.9898"> 
+        <LogoCTA href="https://www.facebook.com/ike.lee.9898"> 
           <Logo src={Facebook}/>
-        </Logos>
-        <Logos href="https://github.com/ikelee"> 
+        </LogoCTA>
+        <LogoCTA href="https://github.com/ikelee"> 
           <Logo src={Github}/>
-        </Logos>
-        <Logos href="https://www.instagram.com/ikeleee/"> 
+        </LogoCTA>
+        <LogoCTA href="https://www.instagram.com/ikeleee/"> 
           <Logo src={Insta}/>
-        </Logos>
-        <Logos href="https://www.linkedin.com/in/eekseunglee/"> 
+        </LogoCTA>
+        <LogoCTA href="https://www.linkedin.com/in/eekseunglee/"> 
           <Logo src={Linkedin}/>
-        </Logos>
-        <Logos> 
+        </LogoCTA>
+        <LogoCTA> 
           <Logo src={Twitter}/>
-        </Logos>
-        <Logos href="https://github.com/ikelee/Resume/blob/master/IkeLeeW18Resume.pdf"> 
+        </LogoCTA>
+        <LogoCTA href="https://github.com/ikelee/Resume/blob/master/IkeLeeW18Resume.pdf"> 
           <Logo src={Document}/>
-        </Logos>
+        </LogoCTA>
       </LogoBar>
     </Contact>
     <Footing>
