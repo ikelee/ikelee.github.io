@@ -97,7 +97,6 @@ class MyComponent extends React.Component {
     } 
 
     // Bind the function to this component, so it has access to this.state
-    this.changeState = this.changeState.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
   }
   
@@ -133,7 +132,7 @@ class MyComponent extends React.Component {
             <NavButton><NavLink to="/journalism">Journalism</NavLink></NavButton> 
             <NavButton><NavLink to="/artist">Artist</NavLink></NavButton>
           </NavBar>
-          <SwipeableRoutes enableMouseEvents animateHeight={this.state.animate} onTouchStart={this.changeState} onMouseOver={this.changeState}>
+          <SwipeableRoutes enableMouseEvents animateHeight={this.state.animate} onTouchStart={this.changeState}>
             <Route path="/about" component={aboutView} />
             <Route path="/developer" component={developerView} />
             <Route path="/journalism" component={journalismView} />

@@ -134,9 +134,9 @@ export default () => (
       <Header>Biography</Header>
       <LineSpacer/>
       <Paragraph style={{maxWidth: '80vw'}}>{paragraphContent}</Paragraph>
-      <div style={{display: 'inline-flex', maxWidth: '70vw'}}>
+      <div style={{display: 'flex', maxWidth: '70vw'}}>
         <InsertedImage style={{marginBottom: '20px'}} src={Portrait}/>
-        <div>
+        <div style={{marginTop: '10px',maxWidth: '60vw', minWidth: '300px',}}>
           <Paragraph style={{marginLeft: '15px', marginTop: '10px', fontWeight: 700, fontSize: '20px'}}>{paragraphHeader}</Paragraph>
           <Paragraph style={{marginLeft: '15px', marginTop: '5px', fontWeight: 300, fontStyle: 'italic'}}>{paragraphItalic}</Paragraph>
           <Paragraph style={{marginLeft: '15px', marginTop: '5px'}}>{paragraphDetail}</Paragraph>
