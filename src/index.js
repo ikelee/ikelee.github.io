@@ -91,19 +91,11 @@ class MyComponent extends React.Component {
     super(props);
     this.state = {
       animate: false, 
-      clicked: false, 
       slide: -58,  // How much should the Navbar slide up or down
-      lastScrollY: 0 // Keep track of current position in state};
     } 
 
     // Bind the function to this component, so it has access to this.state
     this.handleScroll = this.handleScroll.bind(this);
-  }
-  
-  changeState() {
-    if( !this.state.clicked ) {
-      this.setState({animate: true, clicked: true})
-    }
   }
 
   componentDidMount() {
@@ -132,7 +124,7 @@ class MyComponent extends React.Component {
             <NavButton><NavLink to="/journalism">Journalism</NavLink></NavButton> 
             <NavButton><NavLink to="/artist">Artist</NavLink></NavButton>
           </NavBar>
-          <SwipeableRoutes enableMouseEvents animateHeight={this.state.animate} onTouchStart={this.changeState}>
+          <SwipeableRoutes enableMouseEvents animateHeight={this.state.animate}>
             <Route path="/about" component={aboutView} />
             <Route path="/developer" component={developerView} />
             <Route path="/journalism" component={journalismView} />
