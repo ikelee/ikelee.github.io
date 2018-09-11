@@ -10,6 +10,7 @@ import Linkedin from '../../logos/linkedin.svg'
 import Twitter from '../../logos/twitter.svg'
 import Document from '../../logos/document.svg'
 import Portrait from '../../images/portrait2.jpg'
+import Search from '../../images/search.jpg'
 
 const Title = styled.div`
   font-family: 'Montserrat', sans-serif;
@@ -108,6 +109,19 @@ const InsertedImage = styled.img`
   height: 400px;
 `
 
+const ParallaxImage = styled.div`
+  height: 300px;
+  width: auto;
+  background-image: url(${Search});
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+`
+
 const Footing = styled.div`
   width: 100%;
   background: #000000;
@@ -121,6 +135,8 @@ const paragraphHeader = "I'm also an aspiring musician, journalist and an entrep
 const paragraphItalic = "I have worked at several different companies including Toast, Rave and Hootsuite. "
 const paragraphDetail = "I love imagining, talking about, building and breaking new technologies. I am also fascinated by what big data/deep learning is enabling us to create.\n\nOn my spare time, I love to cook, produce music and be out in nature. Check out my Instagram page for more pictures and updates! \n\nDon’t hesitate to reach out - I love meeting new people, and thanks for visiting \n\n (This webpage is still under construction)"
 
+const searchForString = "Currently in search for Winter 2019 Internship"
+const searchForParagraph = "Please feel free to contact me for any internship opportunities!"
 export default () => (
   <div>
     <FlexBox>
@@ -134,15 +150,22 @@ export default () => (
       <Header>Biography</Header>
       <LineSpacer/>
       <Paragraph style={{maxWidth: '80vw'}}>{paragraphContent}</Paragraph>
-      <div style={{display: 'flex', maxWidth: '70vw'}}>
-        <InsertedImage style={{marginBottom: '20px'}} src={Portrait}/>
-        <div style={{marginTop: '10px',maxWidth: '60vw', minWidth: '300px',}}>
+      <div style={{marginBottom: '20px',display: 'flex', maxWidth: '70vw', flexWrap: 'wrap', justifyContent:'center',alignItems: 'center'}}>
+        <InsertedImage src={Portrait}/>
+        <div style={{maxWidth: '40vw', minWidth: '300px'}}>
           <Paragraph style={{marginLeft: '15px', marginTop: '10px', fontWeight: 700, fontSize: '20px'}}>{paragraphHeader}</Paragraph>
           <Paragraph style={{marginLeft: '15px', marginTop: '5px', fontWeight: 300, fontStyle: 'italic'}}>{paragraphItalic}</Paragraph>
           <Paragraph style={{marginLeft: '15px', marginTop: '5px'}}>{paragraphDetail}</Paragraph>
         </div>
       </div>
     </Heading>
+    <ParallaxImage>
+      <ContentBox>
+        <Title style={{fontSize: '40px'}}>{searchForString}</Title>
+        <LineSpacer/>
+        <TitleDescription style={{fontSize: '20px'}}>{searchForParagraph}</TitleDescription>
+      </ContentBox>
+    </ParallaxImage>
     <Contact>
       <Header>Contact</Header>
       <LogoBar>
