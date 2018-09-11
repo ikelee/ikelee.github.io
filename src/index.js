@@ -31,6 +31,24 @@ const sectionStyle = {
   height: "100%",
 };
 
+const StyledLink = styled.a`
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 20px 16px;
+  text-decoration: none;
+  font-family: Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+
+  &:hover {
+    background-color: #111;
+  }
+  &.active {
+    color: red;
+  }
+`
+
 const NavLink = styled(Link)`
   display: block;
   color: white;
@@ -70,18 +88,19 @@ const NavBar = styled.div`
   overflow: hidden;
   background-color: #333;
   transition: all 0.2s ease 0s;
-  top: -58px;
+  top: -75px;
   position: fixed;
   width: 100%;
   z-index: 1;
 `
 
 const NavButton = styled.div`
-  float: left;
+  float: right;
   display: block;
   color: white;
   text-align: center;
   text-decoration: none;
+  margin-top: 8.5px;
 `
 
 
@@ -91,7 +110,7 @@ class MyComponent extends React.Component {
     super(props);
     this.state = {
       animate: false, 
-      slide: -58,  // How much should the Navbar slide up or down
+      slide: -75,  // How much should the Navbar slide up or down
     } 
 
     // Bind the function to this component, so it has access to this.state
@@ -105,10 +124,10 @@ class MyComponent extends React.Component {
   handleScroll = () => {
     const currentScrollY = window.scrollY;
 
-    if (currentScrollY > 58) {
+    if (currentScrollY > 75) {
       this.setState({ slide: '0px' });
     } else {
-      this.setState({ slide: '-58px' });
+      this.setState({ slide: '-75px' });
     }
   };
 
@@ -119,10 +138,11 @@ class MyComponent extends React.Component {
           <NavBar style={{
             top: `${this.state.slide}`,
           }}>
-            <NavButton><NavLink to="/about" >About</NavLink></NavButton>
-            <NavButton><NavLink to="/developer">Developer</NavLink></NavButton>
+            <NavButton style={{float: 'left', marginTop: '0px',}}><StyledLink href="ikelee.me" >Ike Lee</StyledLink></NavButton>
             <NavButton><NavLink to="/journalism">Journalism</NavLink></NavButton> 
+            <NavButton><NavLink to="/developer">Developer</NavLink></NavButton>
             <NavButton><NavLink to="/artist">Artist</NavLink></NavButton>
+            <NavButton><NavLink to="/about" >About</NavLink></NavButton>
           </NavBar>
           <SwipeableRoutes enableMouseEvents animateHeight={this.state.animate}>
             <Route path="/about" component={aboutView} />
