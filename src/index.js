@@ -115,10 +115,19 @@ class MyComponent extends React.Component {
 
     // Bind the function to this component, so it has access to this.state
     this.handleScroll = this.handleScroll.bind(this);
+    this.handleFinishedLoading = this.handleFinishedLoading.bind(this)
   }
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('load', this.handleFinishedLoading);
+  }
+
+  handleFinishedLoading = () => {
+    console.log("MouseOver triggered!!")
+    if (this.state.animate != true) {
+      this.setState({ animate: true })
+    }
   }
 
   handleScroll = () => {
@@ -131,6 +140,11 @@ class MyComponent extends React.Component {
     }
   };
 
+  updateScrollBars = () => {
+    console.log("Switching pages")
+    window.scrollTo(0, 0)
+  }
+
   render() {
     return (
       (<Router>
@@ -139,16 +153,16 @@ class MyComponent extends React.Component {
             top: `${this.state.slide}`,
           }}>
             <NavButton style={{float: 'left', marginTop: '0px',}}><StyledLink href="ikelee.me" >Ike Lee</StyledLink></NavButton>
-            <NavButton><NavLink to="/journalism">Journalism</NavLink></NavButton> 
-            <NavButton><NavLink to="/developer">Developer</NavLink></NavButton>
-            <NavButton><NavLink to="/artist">Artist</NavLink></NavButton>
-            <NavButton><NavLink to="/about" >About</NavLink></NavButton>
+            <NavButton onClick={this.updateScrollBars}><NavLink to="/artist">Artist</NavLink></NavButton>
+            <NavButton onClick={this.updateScrollBars}><NavLink to="/journalism">Journalism</NavLink></NavButton> 
+            <NavButton onClick={this.updateScrollBars}><NavLink to="/work-experience">Work Experience</NavLink></NavButton>
+            <NavButton onClick={this.updateScrollBars}><NavLink to="/about" >About</NavLink></NavButton>
           </NavBar>
-          <SwipeableRoutes enableMouseEvents animateHeight={this.state.animate}>
-            <Route path="/about" component={aboutView} />
-            <Route path="/developer" component={developerView} />
-            <Route path="/journalism" component={journalismView} />
-            <Route path="/artist" component={artistView} />
+          <SwipeableRoutes enableMouseEvents onSwitching={this.updateScrollBars} animateHeight={this.state.animate} style={{minHeight: '100%', WebkitOverflowScrolling: 'touch'}}>
+            <Route path="/about" component={aboutView} style={{minHeight: '100%'}}/>
+            <Route path="/work-experience" component={developerView} style={{minHeight: '100%'}}/>
+            <Route path="/journalism" component={journalismView} style={{minHeight: '100%'}}/>
+            <Route path="/artist" component={artistView} style={{minHeight: '100%'}}/>
           </SwipeableRoutes>
         </div>
       </Router>
