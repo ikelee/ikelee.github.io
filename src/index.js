@@ -110,21 +110,23 @@ class MyComponent extends React.Component {
     super(props);
     this.state = {
       animate: false, 
+      renderName: 'None',
       slide: -75,  // How much should the Navbar slide up or down
     } 
 
     // Bind the function to this component, so it has access to this.state
     this.handleScroll = this.handleScroll.bind(this);
     this.handleFinishedLoading = this.handleFinishedLoading.bind(this)
+    this.renderName = this.renderName.bind(this)
   }
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
     window.addEventListener('load', this.handleFinishedLoading);
+    window.addEventListener('resize', this.renderName);
   }
 
   handleFinishedLoading = () => {
-    console.log("MouseOver triggered!!")
     if (this.state.animate != true) {
       this.setState({ animate: true })
     }
@@ -140,8 +142,17 @@ class MyComponent extends React.Component {
     }
   };
 
+  renderName = () => {
+    if (window.innerWidth < 550) {
+      console.log("DOn't render button")
+      this.setState({renderName: 'None'})
+    } else {
+      console.log("Render button")
+      this.setState({renderName: 'block'})
+    }
+  }
+
   updateScrollBars = () => {
-    console.log("Switching pages")
     window.scrollTo(0, 0)
   }
 
@@ -152,7 +163,7 @@ class MyComponent extends React.Component {
           <NavBar style={{
             top: `${this.state.slide}`,
           }}>
-            <NavButton style={{float: 'left', marginTop: '0px',}}><StyledLink href="ikelee.me" >Ike Lee</StyledLink></NavButton>
+            <NavButton style={{float: 'left', marginTop: '0px',display: `${this.state.renderName}`}}><StyledLink href="" >Ike Lee</StyledLink></NavButton>
             <NavButton onClick={this.updateScrollBars}><NavLink to="/artist">Artist</NavLink></NavButton>
             <NavButton onClick={this.updateScrollBars}><NavLink to="/journalism">Journalism</NavLink></NavButton> 
             <NavButton onClick={this.updateScrollBars}><NavLink to="/work-experience">Work Experience</NavLink></NavButton>
