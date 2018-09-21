@@ -166,7 +166,6 @@ class MyComponent extends React.Component {
             top: `${this.state.slide}`,
           }}>
             <NavButton style={{float: 'left', marginTop: '0px',display: `${this.state.renderName}`}}><StyledLink href="" >Ike Lee</StyledLink></NavButton>
-            <NavButton onClick={this.updateScrollBars}><NavLink to="/artist">Artist</NavLink></NavButton>
             <NavButton onClick={this.updateScrollBars}><NavLink to="/journalism">Journalism</NavLink></NavButton> 
             <NavButton onClick={this.updateScrollBars}><NavLink to="/work-experience">Work Experience</NavLink></NavButton>
             <NavButton onClick={this.updateScrollBars}><NavLink to="/about" >About</NavLink></NavButton>
@@ -175,7 +174,6 @@ class MyComponent extends React.Component {
             <Route path="/about" component={aboutView} style={{minHeight: '100%'}}/>
             <Route path="/work-experience" component={developerView} style={{minHeight: '100%'}}/>
             <Route path="/journalism" component={journalismView} style={{minHeight: '100%'}}/>
-            <Route path="/artist" component={artistView} style={{minHeight: '100%'}}/>
           </SwipeableRoutes>
         </div>
       </Router>
