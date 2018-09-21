@@ -124,6 +124,8 @@ class MyComponent extends React.Component {
     window.addEventListener('scroll', this.handleScroll);
     window.addEventListener('load', this.handleFinishedLoading);
     window.addEventListener('resize', this.renderName);
+
+    this.renderName()
   }
 
   handleFinishedLoading = () => {
