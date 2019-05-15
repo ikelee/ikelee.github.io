@@ -39,7 +39,7 @@ const LineSpacer = styled.div`
 
 const Heading = styled.div`
   width: 100%;
-  background: #c5c5c5;
+  background: #F6FFEB;
   margin: 0;
   overflow: auto;
   text-align: -webkit-center;
@@ -135,7 +135,7 @@ const paragraphHeader = "I'm also an aspiring musician, journalist and an entrep
 const paragraphItalic = "I have worked at several different companies including Toast, Rave and Hootsuite. "
 const paragraphDetail = "I love imagining, talking about, building and breaking new technologies. I am also fascinated by what big data/deep learning is enabling us to create.\n\nOn my spare time, I love to cook, produce music and be out in nature. Check out my Instagram page for more pictures and updates! \n\nDon’t hesitate to reach out - I love meeting new people, and thanks for visiting \n\n"
 
-const searchForString = "Currently in search for Winter 2019 Internship"
+const searchForString = "Currently in search for Fall 2019 Internship"
 const searchForParagraph = "Please feel free to contact me for any internship opportunities!"
 export default () => (
   <div>
@@ -184,7 +184,7 @@ export default () => (
         <LogoCTA> 
           <Logo src={Twitter}/>
         </LogoCTA>
-        <LogoCTA href="https://github.com/ikelee/Resume/blob/master/IkeLeeW18Resume.pdf"> 
+        <LogoCTA href="https://github.com/ikelee/Resume/blob/master/Fall2019ResumeIkeLee.pdf"> 
           <Logo src={Document}/>
         </LogoCTA>
       </LogoBar>

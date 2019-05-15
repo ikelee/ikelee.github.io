@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import Developer from '../../images/developer.png'
 import Toast from '../../images/toast.jpg'
 import Hootsuite from '../../images/hootsuite.jpg'
+import Vidyard from '../../images/vidyard.jpg'
+import Rave from '../../images/rave.jpg'
 
 const Title = styled.div`
   font-family: 'Montserrat', sans-serif;
@@ -52,7 +54,7 @@ const FlexBox = styled.div`
 
 const Heading = styled.div`
   width: 100%;
-  background: #1111112e;
+  background: #F79256;
   margin: 0;
   overflow: auto;
   text-align: -webkit-center;
@@ -88,6 +90,15 @@ const paragraphHeaderHootsuite = "My role at Hootsuite was working on their new 
 const paragraphItalicHootsuite = "Tech Stack: Scala, Go, React, Play 2"
 const paragraphDetailHootsuite = "As part of this project, I got to make React components responsible for indicating state of the messaging inbox, build endpoints responsible for retrieving social media updates and build the GraphQL service for data aggregation."
 
+const paragraphContentVidyard = "Vidyard is a company in Kitchener, building software to enable sales and marketting to use video more effectively in their processes. "
+const paragraphHeaderVidyard = "My role at Vidyard was building the new edit page. This page was responsible to allowing users to edit their videos, thumbnails and other video-related metadata."
+const paragraphItalicVidyard = "Tech Stack: Ruby on Rails, Vue, Javascript"
+const paragraphDetailVidyard = "I was given an opportunity to build some of the features on the page, along with building UI components for the shared component library."
+
+const paragraphContentRave = "Rave is a company in Kitchener, building software to mash up two songs into one, as a DJ would. "
+const paragraphHeaderRave = "My role at Rave was building the music mashup engine."
+const paragraphItalicRave = "Tech Stack: Python, Numpy, C++, "
+const paragraphDetailRave = "I was responsible for creating different features to improve the quality of mashups. Check out the product at rave.dj!"
 
 export default () => (
   <div>
@@ -98,6 +109,19 @@ export default () => (
         <TitleDescription>These are some of the companies I have previously worked at.</TitleDescription>
       </ContentBox>
     </FlexBox>
+    <Heading style={{background: '#BCD8C1'}}>
+      <Header>Vidyard</Header>
+      <LineSpacer/>
+      <Paragraph style={{maxWidth: '80vw'}}>{paragraphContentVidyard}</Paragraph>
+      <div style={{marginBottom: '20px',display: 'flex', maxWidth: '90vw', flexWrap: 'wrap', justifyContent:'center',alignItems: 'center'}}>
+        <InsertedImage src={Vidyard}/>
+        <div style={{maxWidth: '40vw', minWidth: '300px'}}>
+          <Paragraph style={{marginLeft: '15px', marginTop: '10px', fontWeight: 700, fontSize: '20px'}}>{paragraphHeaderVidyard}</Paragraph>
+          <Paragraph style={{marginLeft: '15px', marginTop: '5px', fontWeight: 300, fontStyle: 'italic'}}>{paragraphItalicVidyard}</Paragraph>
+          <Paragraph style={{marginLeft: '15px', marginTop: '5px'}}>{paragraphDetailVidyard}</Paragraph>
+        </div>
+      </div>
+    </Heading>
     <Heading>
       <Header>Toast</Header>
       <LineSpacer/>
@@ -111,7 +135,7 @@ export default () => (
         </div>
       </div>
     </Heading>
-    <Heading style={{background: '#1111114a'}}>
+    <Heading style={{background: '#96BDC6'}}>
       <Header>Hootsuite</Header>
       <LineSpacer/>
       <Paragraph style={{maxWidth: '80vw'}}>{paragraphContentHootsuite}</Paragraph>
@@ -121,6 +145,19 @@ export default () => (
           <Paragraph style={{marginLeft: '15px', marginTop: '10px', fontWeight: 700, fontSize: '20px'}}>{paragraphHeaderHootsuite}</Paragraph>
           <Paragraph style={{marginLeft: '15px', marginTop: '5px', fontWeight: 300, fontStyle: 'italic'}}>{paragraphItalicHootsuite}</Paragraph>
           <Paragraph style={{marginLeft: '15px', marginTop: '5px'}}>{paragraphDetailHootsuite}</Paragraph>
+        </div>
+      </div>
+    </Heading>
+    <Heading style={{background: '#BFB8AD'}}>
+      <Header>Rave</Header>
+      <LineSpacer/>
+      <Paragraph style={{maxWidth: '80vw'}}>{paragraphContentRave}</Paragraph>
+      <div style={{marginBottom: '20px',display: 'flex', maxWidth: '90vw', flexWrap: 'wrap', justifyContent:'center',alignItems: 'center'}}>
+        <InsertedImage src={Rave}/>
+        <div style={{maxWidth: '40vw', minWidth: '300px'}}>
+          <Paragraph style={{marginLeft: '15px', marginTop: '10px', fontWeight: 700, fontSize: '20px'}}>{paragraphHeaderRave}</Paragraph>
+          <Paragraph style={{marginLeft: '15px', marginTop: '5px', fontWeight: 300, fontStyle: 'italic'}}>{paragraphItalicRave}</Paragraph>
+          <Paragraph style={{marginLeft: '15px', marginTop: '5px'}}>{paragraphDetailRave}</Paragraph>
         </div>
       </div>
     </Heading>
