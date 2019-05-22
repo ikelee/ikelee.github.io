@@ -9,8 +9,7 @@ import Artist from './components/artist'
 import Developer from './components/developer'
 import Journalism from './components/journalism'
 
-import ReactGA from 'react-ga';
-ReactGA.initialize('UA-140654519-1');
+import {Helmet} from "react-helmet";
 
 const styles = {
   slide: {
@@ -165,6 +164,18 @@ class MyComponent extends React.Component {
     return (
       (<Router>
         <div>
+          <Helmet>
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140654519-1"></script>
+            <script>
+              {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'UA-140654519-1');
+              `}
+            </script>
+          </Helmet>
           <NavBar style={{
             top: `${this.state.slide}`,
           }}>
