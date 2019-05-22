@@ -9,6 +9,10 @@ import Artist from './components/artist'
 import Developer from './components/developer'
 import Journalism from './components/journalism'
 
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-140654519-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
+
 const styles = {
   slide: {
     padding: 15,
